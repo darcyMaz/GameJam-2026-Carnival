@@ -17,9 +17,13 @@ public class MaskController : MonoBehaviour
     private Color32[] colors;
     private int colorIndex;
 
+    private IllusionStates state;
+
     private void Awake()
     {
         input_system = new InputSystem_Actions();
+        state = IllusionStates.Illusory;
+        // Set the sprite to be the simple mask.
     }
 
     private void OnEnable()
@@ -59,5 +63,7 @@ public class MaskController : MonoBehaviour
         // Debug.Log("Mask swap!");
         colorIndex = (colorIndex+1) % colors.Length;
         sr.color = colors[colorIndex];
+
+        if () GameManager.MaskSwapped();
     }
 }

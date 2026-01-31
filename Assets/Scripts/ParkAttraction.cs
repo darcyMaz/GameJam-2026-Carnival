@@ -4,15 +4,9 @@ using UnityEngine;
 public class ParkAttraction : MonoBehaviour
 {
 
+
     public GameManager Manager;
-
-    public enum IllusionState
-    {
-        Illusory,
-        Clear
-    }
-
-    private IllusionState state;
+    private IllusionStates state;
 
     private void OnEnable()
     {

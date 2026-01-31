@@ -17,9 +17,15 @@ public class ParkAttraction : MonoBehaviour
         Manager.RemoveParkAttraction(this);
     }
 
-    public void SetIllusionState()
+    public void SetIllusionState(int IllusionState)
     {
+        state = (IllusionStates)IllusionState;
+        ReflectChangedState();
+    }
 
+    private void ReflectChangedState()
+    {
+        // This functon will change the sprite depending on the state.
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -6,7 +6,9 @@ public class MaskController : MonoBehaviour
     // Get input action for masks X
     // Create event function that switch sprites when a button is pressed    1/2
     // For now just change colour X
-    // Also send message to gamemanager to change state of park attractions to real from illusory
+    // Also send message to gamemanager to change state of park attractions to real from illusory X
+
+    // 
 
     public GameManager GameManager;
 
@@ -14,8 +16,6 @@ public class MaskController : MonoBehaviour
     private InputAction mask;
 
     private SpriteRenderer sr;
-    //private Color32[] colors;
-    //private int colorIndex;
 
     private IllusionStates state;
     private int IllusionStatesIndex = 0;
@@ -56,8 +56,9 @@ public class MaskController : MonoBehaviour
     {
         // Debug.Log("Mask swap!");
 
-        string[] enums = System.Enum.GetNames(typeof(IllusionStates));
-        IllusionStatesIndex = (IllusionStatesIndex + 1) % enums.Length;
+        // Cycles through IllusionStates.
+        IllusionStatesIndex = (IllusionStatesIndex + 1) % System.Enum.GetNames(typeof(IllusionStates)).Length;
+        state = (IllusionStates)IllusionStatesIndex;
         GameManager.MaskSwapped(IllusionStatesIndex);
     }
 }

@@ -64,6 +64,6 @@ public class MaskController : MonoBehaviour
         colorIndex = (colorIndex+1) % colors.Length;
         sr.color = colors[colorIndex];
 
-        if () GameManager.MaskSwapped();
+        // if () GameManager.MaskSwapped();
     }
 }

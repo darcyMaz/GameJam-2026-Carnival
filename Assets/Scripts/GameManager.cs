@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void MaskSwapped()
+    public void MaskSwapped(int IllusionState)
     {
         for (int i = 0; i < parkAttractions.Count; i++)
         {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
                 Debug.Log("The game manager is holding a ParkAttraction class which is of null value. It was skipped.");
                 continue;
             }
-            parkAttractions[i].SetIllusionState();
+            parkAttractions[i].SetIllusionState(IllusionState);
         }
     }
 

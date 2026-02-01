@@ -2,5 +2,9 @@ using UnityEngine;
 
 public class PlayButton : MonoBehaviour
 {
-    // I need to make a scene manager frfr
+    public GameManager gm;
+    public void PlayButtonClick()
+    {
+        gm.LoadGameScene();
+    }
 }

@@ -5,10 +5,9 @@ public class CreditsButton : MonoBehaviour
 {
     public GameManager gm;
 
-    public void OnButtonClick()
+    public void CreditsButtonClick()
     {
-        //Debug.Log("ButtonPressed");
-        gm.LoadMainMenu();
+        gm.LoadCreditsScene();
     }
 
  

@@ -311,8 +311,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 770701943}
-        m_TargetAssemblyTypeName: CreditsButton, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_TargetAssemblyTypeName: MainMenuButton, Assembly-CSharp
+        m_MethodName: MainMenuButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -369,10 +369,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 770701938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d9fbb593750030489f1b60eb26d9986, type: 3}
+  m_Script: {fileID: 11500000, guid: 40dc91df4b48eeb4097aebc45bea20bc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CreditsButton
-  gm: {fileID: 2004417230}
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuButton
+  manager: {fileID: 0}
 --- !u!1 &1323400836
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,17 +881,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2004417232}
   m_SourcePrefab: {fileID: 100100000, guid: 4cd9cfcc13f043d458076cb3f4c286f7, type: 3}
---- !u!114 &2004417230 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2801255906044671263, guid: 4cd9cfcc13f043d458076cb3f4c286f7, type: 3}
-  m_PrefabInstance: {fileID: 2004417229}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 738367606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706e81bf6ac6f9f41b69463a22ffee75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!114 &2004417232
 MonoBehaviour:
   m_ObjectHideFlags: 0

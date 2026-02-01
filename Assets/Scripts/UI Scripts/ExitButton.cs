@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class ExitButton : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameManager gm;
 
-    // Update is called once per frame
-    void Update()
+    public void ExitButtonPressed()
     {
-        
+        gm.ExitGame();
     }
 }

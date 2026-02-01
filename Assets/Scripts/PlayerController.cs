@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private float groundCheckDistance = 2.2f;
 
+    private Animator animator;
+
     private void Awake()
     {
         input_system = new InputSystem_Actions();
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -48,6 +51,12 @@ public class PlayerController : MonoBehaviour
         Vector2 movement = move.ReadValue<Vector2>();
 
         sr.flipX = (movement.x == 0) ? sr.flipX : (movement.x < 0) ? true : false;
+
+        Debug.Log("--- " + animator.GetBool("Walk"));
+        bool walkBool = (movement.x != 0) ? true : false;
+        animator.SetBool("Walk", walkBool);
+        Debug.Log(animator.GetBool("Walk") + "---");
+
         rb.transform.Translate(Vector2.right * speedMovement * movement.x * Time.deltaTime);
 
         if (isGrounded()) rb.AddForceY(movement.y * jumpMultiplier, ForceMode2D.Impulse);

@@ -7,10 +7,15 @@ public class GameManager : MonoBehaviour
 {
     private List<ParkAttraction> parkAttractions;
 
+    private void Awake()
+    {
+        parkAttractions = new List<ParkAttraction>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

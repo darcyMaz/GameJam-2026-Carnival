@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d3080818fb366864d96f671d27ca139d
+guid: ec6c927a800e592418414dac7c42028c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8725583791009165418
-    second: walk1_0
+      213: -3680194976722875746
+    second: poolgood_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk1_0
+      name: poolgood_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 389
         y: 0
-        width: 400
-        height: 400
+        width: 7326
+        height: 350
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a60f1015a30871970800000000000000
-      internalID: 8725583791009165418
+      spriteID: e9a814cca225decc0800000000000000
+      internalID: -3680194976722875746
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 260d91e3f723f4d48904c62527c0d036
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      walk1_0: 8725583791009165418
+      poolgood_0: -3680194976722875746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

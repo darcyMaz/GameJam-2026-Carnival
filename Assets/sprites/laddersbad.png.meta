@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: d3080818fb366864d96f671d27ca139d
+guid: b5c58e3c98d1b414381fb8f87f8948d8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8725583791009165418
-    second: walk1_0
+      213: 7180130492821544712
+    second: laddersbad_0
+  - first:
+      213: -421790862896119222
+    second: laddersbad_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk1_0
+      name: laddersbad_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 400
-        height: 400
+        width: 1542
+        height: 3338
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a60f1015a30871970800000000000000
-      internalID: 8725583791009165418
+      spriteID: 80f149924a2f4a360800000000000000
+      internalID: 7180130492821544712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: laddersbad_1
+      rect:
+        serializedVersion: 2
+        x: 6566
+        y: 0
+        width: 1518
+        height: 3220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a424297e17f752af0800000000000000
+      internalID: -421790862896119222
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 260d91e3f723f4d48904c62527c0d036
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      walk1_0: 8725583791009165418
+      laddersbad_0: 7180130492821544712
+      laddersbad_1: -421790862896119222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

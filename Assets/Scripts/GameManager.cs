@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         {
             if (parkAttractions[i] == null)
             {
-                Debug.Log("The game manager is holding a ParkAttraction class which is of null value. It was skipped.");
+                Debug.Log("The game manager is holding a ParkAttraction object which is of null value. It was skipped.");
                 continue;
             }
             parkAttractions[i].SetIllusionState(IllusionState);

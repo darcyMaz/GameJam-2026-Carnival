@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     private List<ParkAttraction> parkAttractions;
 
+    public Timer BarTimer;
+    public Timer EyeTimer;
+
     private void Awake()
     {
         parkAttractions = new List<ParkAttraction>();
@@ -35,6 +38,9 @@ public class GameManager : MonoBehaviour
             }
             parkAttractions[i].SetIllusionState(IllusionState);
         }
+
+        BarTimer.SwapMask(IllusionState);
+        EyeTimer.SwapMask(IllusionState);
     }
 
     public void AddParkAttraction(ParkAttraction pa)
@@ -44,5 +50,13 @@ public class GameManager : MonoBehaviour
     public void RemoveParkAttraction(ParkAttraction pa)
     {
         parkAttractions.Remove(pa);
+    }
+
+
+    public void ResetGame()
+    {
+        // Transition to new scene that shows a failure screen
+        // Also make a script in there that calls the gamescene again
+        Debug.Log("Reset game has been called, but it is not finished yet.");
     }
 }

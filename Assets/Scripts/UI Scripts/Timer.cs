@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour
     public void TimeIsUp()
     {
         if (gm == null) { return; }
-        gm.ResetGame();
+        gm.LoadDeathScene();
     }
 
 }

@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class CreditsButton : MonoBehaviour
 {
+    public GameManager gm;
 
-    private void OnMouseDown()
+    public void OnButtonClick()
     {
-        // Switch scene to main menu
-        SceneManager.LoadScene("Main Menu");
+        //Debug.Log("ButtonPressed");
+        gm.LoadMainMenu();
     }
+
+ 
 }

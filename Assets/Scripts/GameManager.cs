@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     private List<ParkAttraction> parkAttractions;
 
+    public SceneChanger sceneChanger;
+
     public Timer BarTimer;
     public Timer EyeTimer;
 
@@ -53,10 +55,24 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public void ResetGame()
+    public void LoadGameScene()
     {
-        // Transition to new scene that shows a failure screen
-        // Also make a script in there that calls the gamescene again
-        Debug.Log("Reset game has been called, but it is not finished yet.");
+        sceneChanger.ChangeScene("Game");
+    }
+    public void LoadMainMenu()
+    {
+        sceneChanger.ChangeScene("Main Menu");
+    }
+    public void LoadCreditsScene()
+    {
+        sceneChanger.ChangeScene("Credits");
+    }
+    public void LoadDeathScene()
+    {
+        sceneChanger.ChangeScene("Death");
+    }
+    public void LoadEndScene()
+    {
+        sceneChanger.ChangeScene("End");
     }
 }

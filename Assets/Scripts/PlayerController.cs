@@ -52,10 +52,8 @@ public class PlayerController : MonoBehaviour
 
         sr.flipX = (movement.x == 0) ? sr.flipX : (movement.x < 0) ? true : false;
 
-        Debug.Log("--- " + animator.GetBool("Walk"));
         bool walkBool = (movement.x != 0) ? true : false;
         animator.SetBool("Walk", walkBool);
-        Debug.Log(animator.GetBool("Walk") + "---");
 
         rb.transform.Translate(Vector2.right * speedMovement * movement.x * Time.deltaTime);
 

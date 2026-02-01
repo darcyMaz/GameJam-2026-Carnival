@@ -340,7 +340,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2625263914096795121, guid: b527eeaa7b2cde541a9104c977cab08a, type: 3}
+  m_Sprite: {fileID: 1925608543531601625, guid: b527eeaa7b2cde541a9104c977cab08a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f66dd991fe45dd40b8f9e7654d29bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
+  gm: {fileID: 0}
 --- !u!1 &936091832
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f66dd991fe45dd40b8f9e7654d29bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
+  gm: {fileID: 1296920644}
 --- !u!1 &2029892457
 GameObject:
   m_ObjectHideFlags: 0

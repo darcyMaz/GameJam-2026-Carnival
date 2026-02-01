@@ -3,6 +3,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     private Animator animator;
+    public GameManager gm;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,12 @@ public class Timer : MonoBehaviour
         {
             Debug.Log("A Timer Script is trying to understand whether the mask is on or off, but is out of sync with the GameManager.");
         }
+    }
+
+    public void TimeIsUp()
+    {
+        if (gm == null) { return; }
+        gm.ResetGame();
     }
 
 }

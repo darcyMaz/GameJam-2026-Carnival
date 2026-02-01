@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ParkAttraction : MonoBehaviour
 {
-
-
     public GameManager Manager;
     private IllusionStates state;
 

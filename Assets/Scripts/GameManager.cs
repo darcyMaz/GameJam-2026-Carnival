@@ -12,21 +12,11 @@ public class GameManager : MonoBehaviour
     public Timer BarTimer;
     public Timer EyeTimer;
 
+    static string attractionsInspected;
+
     private void Awake()
     {
         parkAttractions = new List<ParkAttraction>();
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void MaskSwapped(int IllusionState)
@@ -54,10 +44,15 @@ public class GameManager : MonoBehaviour
         parkAttractions.Remove(pa);
     }
 
+    public void AttractionInspected(string name)
+    {
+        attractionsInspected += name + "\n";
+    }
 
     public void LoadGameScene()
     {
         sceneChanger.ChangeScene("Game");
+        attractionsInspected = "";
     }
     public void LoadMainMenu()
     {

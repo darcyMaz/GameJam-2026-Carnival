@@ -3,14 +3,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    float speedMovement = 10f;
-    // float jumpForce = 1f;
+    float speedMovement = 8f;
+    float jumpMultiplier = 1f;
     private SpriteRenderer sr;
     Rigidbody2D rb;
 
     private InputSystem_Actions input_system;
     private InputAction move;
-    // private InputAction fire;
+
+    public LayerMask groundLayer;
+    private float groundCheckDistance = 2.2f;
 
     private void Awake()
     {
@@ -28,19 +30,16 @@ public class PlayerController : MonoBehaviour
     {
         move = input_system.Player.Move;
         move.Enable();
-
-        //fire = input_system.Player.Fire;
-        //fire = input_system.FindAction("Fire");
-        //fire.Enable();
-
-        //fire.performed += Fire;
     }
+
     private void OnDisable()
     {
         move.Disable();
-        //fire.Disable();
+    }
 
-        //fire.performed -= Fire;
+    private bool isGrounded()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
     }
 
     // Update is called once per frame
@@ -49,15 +48,9 @@ public class PlayerController : MonoBehaviour
         Vector2 movement = move.ReadValue<Vector2>();
 
         sr.flipX = (movement.x == 0) ? sr.flipX : (movement.x < 0) ? true : false;
-        transform.Translate(Vector2.right * speedMovement * movement.x * Time.deltaTime);
+        rb.transform.Translate(Vector2.right * speedMovement * movement.x * Time.deltaTime);
+
+        if (isGrounded()) rb.AddForceY(movement.y * jumpMultiplier, ForceMode2D.Impulse);
     }
 
-    /*
-
-    private void Fire(InputAction.CallbackContext context)
-    {
-        if (context.started) Debug.Log("Fire");
-        if (context.performed) Debug.Log("Done");
-    }
-    */
 }

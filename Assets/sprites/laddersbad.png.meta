@@ -108,10 +108,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1542
+        width: 8094
         height: 3338
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -128,13 +128,13 @@ TextureImporter:
       name: laddersbad_1
       rect:
         serializedVersion: 2
-        x: 6566
+        x: 8093
         y: 0
-        width: 1518
+        width: 1
         height: 3220
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e8b3e4e048995864a9f88836ba21d145
     internalID: 0
     vertices: []
     indices: 

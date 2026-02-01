@@ -824,12 +824,12 @@ GameObject:
   - component: {fileID: 879564257}
   - component: {fileID: 879564258}
   m_Layer: 0
-  m_Name: Safety Report End Screen_3
+  m_Name: Ferris Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &879564257
 Transform:
   m_ObjectHideFlags: 0
@@ -1062,12 +1062,12 @@ GameObject:
   - component: {fileID: 1202433355}
   - component: {fileID: 1202433356}
   m_Layer: 0
-  m_Name: Safety Report End Screen_5
+  m_Name: Ball Pit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1202433355
 Transform:
   m_ObjectHideFlags: 0
@@ -1153,12 +1153,12 @@ GameObject:
   - component: {fileID: 1212637699}
   - component: {fileID: 1212637700}
   m_Layer: 0
-  m_Name: Safety Report End Screen_6
+  m_Name: Elephant Welfare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1212637699
 Transform:
   m_ObjectHideFlags: 0
@@ -1341,7 +1341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e93724be9c3bf4e8ee8cc77930dd48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SafetyReport
-  gm: {fileID: 0}
+  gm: {fileID: 1835746174}
 --- !u!1 &1817045759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,12 +1353,12 @@ GameObject:
   - component: {fileID: 1817045760}
   - component: {fileID: 1817045761}
   m_Layer: 0
-  m_Name: Safety Report End Screen_1
+  m_Name: Alligator Pool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1817045760
 Transform:
   m_ObjectHideFlags: 0

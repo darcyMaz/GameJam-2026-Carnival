@@ -70,9 +70,13 @@ public class GameManager : MonoBehaviour
     {
         sceneChanger.ChangeScene("End");
     }
-
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public string GetInspectorString()
+    {
+        return attractionsInspected;
     }
 }

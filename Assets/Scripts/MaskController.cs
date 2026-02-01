@@ -24,7 +24,6 @@ public class MaskController : MonoBehaviour
     {
         input_system = new InputSystem_Actions();
         state = IllusionStates.Illusory;
-        // Set the sprite to be the simple mask.
     }
 
     private void OnEnable()
@@ -54,8 +53,6 @@ public class MaskController : MonoBehaviour
 
     private void SwapMask(InputAction.CallbackContext context)
     {
-        // Debug.Log("Mask swap!");
-
         // Cycles through IllusionStates.
         IllusionStatesIndex = (IllusionStatesIndex + 1) % System.Enum.GetNames(typeof(IllusionStates)).Length;
         state = (IllusionStates)IllusionStatesIndex;

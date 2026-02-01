@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MaskController : MonoBehaviour
-{ 
+{
     // Get input action for masks X
     // Create event function that switch sprites when a button is pressed    1/2
     // For now just change colour X
@@ -10,7 +10,8 @@ public class MaskController : MonoBehaviour
 
     // 
 
-    public GameManager GameManager;
+    private GameManager gm;
+    public GameObject GMObject;
 
     private InputSystem_Actions input_system;
     private InputAction mask;
@@ -19,6 +20,8 @@ public class MaskController : MonoBehaviour
 
     private IllusionStates state;
     private int IllusionStatesIndex = 0;
+
+    private Animator Animator;
 
     private void Awake()
     {
@@ -43,6 +46,8 @@ public class MaskController : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        Animator = GetComponent<Animator>();
+        gm = GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -56,6 +61,11 @@ public class MaskController : MonoBehaviour
         // Cycles through IllusionStates.
         IllusionStatesIndex = (IllusionStatesIndex + 1) % System.Enum.GetNames(typeof(IllusionStates)).Length;
         state = (IllusionStates)IllusionStatesIndex;
-        GameManager.MaskSwapped(IllusionStatesIndex);
+        gm.MaskSwapped(IllusionStatesIndex);
+
+        Debug.Log("In SwapMask");
+
+        bool toSet = Animator.GetBool("MaskOn") ? false : true;
+        Animator.SetBool("MaskOn", toSet);
     }
 }

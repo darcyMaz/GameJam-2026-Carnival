@@ -257,6 +257,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &837927289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837927291}
+  - component: {fileID: 837927290}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &837927290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837927289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706e81bf6ac6f9f41b69463a22ffee75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+--- !u!4 &837927291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837927289}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.05104, y: 66.88899, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &936091832
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 3797848017206113090, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1971046727572776466, guid: da4a12eb2a0e1ec49b5513f04c309a1e, type: 3}
+      objectReference: {fileID: 9104348463550422359, guid: 12b3836f19d56264aa30ad156281661d, type: 3}
     - target: {fileID: 3797848017206113090, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -380,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 3797848017206113090, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3817124215554389118, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
+      propertyPath: m_Mass
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3817124215554389118, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
       propertyPath: m_Constraints
@@ -445,6 +493,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8293954392364835596, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5954986742242695629, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
     m_RemovedGameObjects: []
@@ -456,6 +508,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2327075123694254728, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2141862372}
+    - targetCorrespondingSourceObject: {fileID: 2327075123694254728, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2141862373}
   m_SourcePrefab: {fileID: 100100000, guid: a44236ea920878e4aa267ddf79a536de, type: 3}
 --- !u!1 &2141862365 stripped
 GameObject:
@@ -521,6 +576,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.010934591, y: -0.69420016}
   m_Size: {x: 1.3975396, y: 2.720332}
   m_Direction: 0
+--- !u!114 &2141862373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2141862365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c3e9bf2b9c539f45857d7d3af138f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MaskController
+  GMObject: {fileID: 837927289}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -528,3 +596,4 @@ SceneRoots:
   - {fileID: 936091835}
   - {fileID: 123327877}
   - {fileID: 1312872865}
+  - {fileID: 837927291}

@@ -3,60 +3,60 @@ using UnityEngine.InputSystem;
 
 public class MaskController : MonoBehaviour
 {
-
     public GameManager gm;
-    // public GameObject GMObject;
 
     private InputSystem_Actions input_system;
     private InputAction mask;
 
-    private SpriteRenderer sr;
-
-    private IllusionStates state;
-    private int IllusionStatesIndex = 0;
-
-    private Animator Animator;
+    private IllusionStates state = IllusionStates.Illusory;
+    private Animator animator;
 
     private void Awake()
     {
         input_system = new InputSystem_Actions();
-        state = IllusionStates.Illusory;
+        gm = FindFirstObjectByType<GameManager>();
+        if (gm == null)
+            Debug.LogError("GameManager NOT FOUND in Awake()");
     }
 
     private void OnEnable()
     {
-        mask = input_system.Player.Mask;
-        mask.Enable();
+        input_system.Player.Enable();
 
+        mask = input_system.Player.Mask;
         mask.performed += SwapMask;
+        mask.Enable();
     }
 
     private void OnDisable()
     {
+        mask.performed -= SwapMask;
         mask.Disable();
+        input_system.Player.Disable();
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        Animator = GetComponent<Animator>();
-    }
+        animator = GetComponent<Animator>();
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (gm == null)
+        {
+            Debug.LogError("GameManager not found!");
+            return;
+        }
 
+        // Sync world with starting mask state
+        gm.MaskSwapped((int)state);
+        animator.SetBool("MaskOn", true);
     }
 
     private void SwapMask(InputAction.CallbackContext context)
     {
-        // Cycles through IllusionStates.
-        IllusionStatesIndex = (IllusionStatesIndex + 1) % System.Enum.GetNames(typeof(IllusionStates)).Length;
-        state = (IllusionStates)IllusionStatesIndex;
-        gm.MaskSwapped(IllusionStatesIndex);
+        state = state == IllusionStates.Illusory
+            ? IllusionStates.Visible
+            : IllusionStates.Illusory;
 
-        bool toSetMask = Animator.GetBool("MaskOn") ? false : true;
-        Animator.SetBool("MaskOn", toSetMask);
+        gm.MaskSwapped((int)state);
+        animator.SetBool("MaskOn", state == IllusionStates.Visible);
     }
 }

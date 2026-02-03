@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] float speedMovement = 8f;
     [SerializeField] float jumpMultiplier = 10f; // Adjusted from 1f
-    
+
     [Header("Audio Clips")]
     public AudioClip walkSound;
     public AudioClip jumpSound;
@@ -19,21 +19,21 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private AudioSource audioSource;
     private Animator animator;
-
+    private InputAction jump;
+    private Collider2D coll;
     private InputSystem_Actions input_system;
     private InputAction move;
 
     public LayerMask groundLayer;
-    private float groundCheckDistance = 1.1f; // Adjusted from 2.2f
+ 
 
     // State tracking variables
     private bool wasGrounded;
-    private bool hasJumped; 
 
     private void Awake()
     {
         input_system = new InputSystem_Actions();
-        audioSource = GetComponent<AudioSource>(); // Get the audio component
+        audioSource = GetComponent<AudioSource>(); 
     }
 
     void Start()
@@ -41,22 +41,36 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        coll = GetComponent<Collider2D>();
     }
 
     private void OnEnable()
     {
+        input_system.Player.Enable();
         move = input_system.Player.Move;
+        jump = input_system.Player.Jump;
+
         move.Enable();
+        jump.Enable();
     }
 
     private void OnDisable()
     {
+        input_system.Player.Disable();
         move.Disable();
+        jump.Disable();
     }
 
     private bool isGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
+        return Physics2D.BoxCast(
+          coll.bounds.center,
+          coll.bounds.size,
+          0f,
+          Vector2.down,
+          0.1f,
+          groundLayer
+      );
     }
 
     void Update()
@@ -69,35 +83,23 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Walk", walkBool);
 
         // MOVEMENT
-        rb.transform.Translate(Vector2.right * speedMovement * movement.x * Time.deltaTime);
+        // rb.transform.Translate(Vector2.right * speedMovement * movement.x * Time.deltaTime);
+        rb.linearVelocity = new Vector2(movement.x * speedMovement, rb.linearVelocity.y);
 
         bool groundedNow = isGrounded();
 
         // JUMP LOGIC & SOUND
-        if (groundedNow && movement.y > 0)
+        if (groundedNow && jump.WasPressedThisFrame())
         {
-            if (!hasJumped)
-            {
-                // Apply Force
-                rb.AddForce(Vector2.up * jumpMultiplier, ForceMode2D.Impulse);
-                
-                // Play Jump Sound
-                PlaySound(jumpSound);
-                
-                hasJumped = true;
-            }
-        }
-
-        // Reset the jump lock when player releases the Up key
-        if (movement.y == 0)
-        {
-            hasJumped = false;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+            rb.AddForce(Vector2.up * jumpMultiplier, ForceMode2D.Impulse);
+            PlaySound(jumpSound);
         }
 
         // LANDING SOUND
         if (!wasGrounded && groundedNow)
         {
-            if (rb.linearVelocity.y <= 0.1f) 
+            if (rb.linearVelocity.y <= 0.1f)
             {
                 PlaySound(landSound);
             }

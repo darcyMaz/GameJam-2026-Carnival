@@ -1,82 +1,47 @@
-using NUnit.Framework;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private List<ParkAttraction> parkAttractions;
+    private List<ParkAttraction> parkAttractions = new();
 
-    public SceneChanger sceneChanger;
-
-    public Timer BarTimer;
-    public Timer EyeTimer;
-
-    static string attractionsInspected;
+    private IllusionStates currentState = IllusionStates.Illusory;
 
     private void Awake()
     {
-        parkAttractions = new List<ParkAttraction>();
+        parkAttractions.Clear();
     }
 
-    public void MaskSwapped(int IllusionState)
+    // Called by MaskController
+    public void MaskSwapped(int illusionState)
     {
+        currentState = (IllusionStates)illusionState;
+
         for (int i = 0; i < parkAttractions.Count; i++)
         {
             if (parkAttractions[i] == null)
-            {
-                Debug.Log("The game manager is holding a ParkAttraction object which is of null value. It was skipped.");
                 continue;
-            }
-            parkAttractions[i].SetIllusionState(IllusionState);
+
+            parkAttractions[i].SetIllusionState(illusionState);
         }
-
-        BarTimer.SwapMask(IllusionState);
-        EyeTimer.SwapMask(IllusionState);
     }
 
-    public void AddParkAttraction(ParkAttraction pa)
+    public void AddParkAttraction(ParkAttraction attraction)
     {
-        parkAttractions.Add(pa);
-    }
-    public void RemoveParkAttraction(ParkAttraction pa)
-    {
-        parkAttractions.Remove(pa);
+        if (!parkAttractions.Contains(attraction))
+            parkAttractions.Add(attraction);
+
+        // Sync new attraction to current state
+        attraction.SetIllusionState((int)currentState);
     }
 
-    public void AttractionInspected(string name)
+    public void RemoveParkAttraction(ParkAttraction attraction)
     {
-        attractionsInspected += name + "\n";
+        parkAttractions.Remove(attraction);
     }
 
-    public void LoadGameScene()
+    public IllusionStates GetCurrentState()
     {
-        sceneChanger.ChangeScene("Game");
-        attractionsInspected = "";
-    }
-    public void LoadMainMenu()
-    {
-        sceneChanger.ChangeScene("Main Menu");
-    }
-    public void LoadCreditsScene()
-    {
-        sceneChanger.ChangeScene("Credits");
-    }
-    public void LoadDeathScene()
-    {
-        sceneChanger.ChangeScene("Death");
-    }
-    public void LoadEndScene()
-    {
-        sceneChanger.ChangeScene("End");
-    }
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
-
-    public string GetInspectorString()
-    {
-        return attractionsInspected;
+        return currentState;
     }
 }

@@ -207,7 +207,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1.19625, y: 1, z: 1}
+  m_LocalScale: {x: 1.5980703, y: 1.3359, z: 1.3359}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -343,7 +343,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.47, y: -3.79, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.35, y: 2.35, z: 2.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -360,7 +360,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214e290d25f3f0e49a2ae35dcc5af51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitButton
-  gm: {fileID: 0}
 --- !u!1 &691257248
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,8 +799,8 @@ Transform:
   m_GameObject: {fileID: 1268862831}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.43, y: -0.53999996, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 1.43, y: -1, z: 0}
+  m_LocalScale: {x: 2.6188, y: 2.6188, z: 2.6188}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -870,7 +869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214e290d25f3f0e49a2ae35dcc5af51e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExitButton
-  gm: {fileID: 1948042109}
 --- !u!114 &1276886402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,8 +1048,8 @@ Transform:
   m_GameObject: {fileID: 1320438432}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.09317317, w: 0.99564993}
-  m_LocalPosition: {x: -6.09, y: 1.41, z: 0}
-  m_LocalScale: {x: 0.3678039, y: 0.35998082, z: 0.9309}
+  m_LocalPosition: {x: -5.19, y: 1.58, z: 0}
+  m_LocalScale: {x: 0.28406057, y: 0.27801868, z: 0.71894825}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1141,8 +1139,8 @@ Transform:
   m_GameObject: {fileID: 1323712586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.09342802, w: -0.99562603}
-  m_LocalPosition: {x: 7.52, y: -1.4, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalPosition: {x: 6.43, y: -1.19, z: 0}
+  m_LocalScale: {x: 1.41725, y: 1.41725, z: 1.41725}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1303,7 +1301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9fbb593750030489f1b60eb26d9986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CreditsButton
-  gm: {fileID: 1948042109}
 --- !u!114 &1770191264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,17 +1601,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7862177076634748265, guid: 4cd9cfcc13f043d458076cb3f4c286f7, type: 3}
   m_PrefabInstance: {fileID: 1948042107}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1948042109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2801255906044671263, guid: 4cd9cfcc13f043d458076cb3f4c286f7, type: 3}
-  m_PrefabInstance: {fileID: 1948042107}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948042108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706e81bf6ac6f9f41b69463a22ffee75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!114 &1948042110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1770,7 +1756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2705823f10ad93439489f226943c086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButton
-  gm: {fileID: 1948042109}
 --- !u!114 &2015121178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,8 +1935,8 @@ Transform:
   m_GameObject: {fileID: 2104780693}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.09317317, w: 0.99564993}
-  m_LocalPosition: {x: -5.2577, y: -1.5867, z: 0}
-  m_LocalScale: {x: 0.3678039, y: 0.35998082, z: 0.9309}
+  m_LocalPosition: {x: -4.57, y: -0.63, z: 0}
+  m_LocalScale: {x: 0.28002748, y: 0.2740714, z: 0.70874065}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2043,7 +2028,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.41, y: 0.6, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.5835, y: 3.5835, z: 3.5835}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2060,7 +2045,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2705823f10ad93439489f226943c086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayButton
-  gm: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

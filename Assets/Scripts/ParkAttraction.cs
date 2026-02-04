@@ -60,11 +60,11 @@ public class ParkAttraction : MonoBehaviour
         {
             case IllusionStates.Illusory:
                 if (IllusorySprite != null)
-                    sr.sprite = IllusorySprite;
+                    sr.sprite = VisibleSprite;
                 break;
             case IllusionStates.Visible:
                 if (VisibleSprite != null)
-                    sr.sprite = VisibleSprite;
+                    sr.sprite = IllusorySprite;
                 break;
         }
     }
